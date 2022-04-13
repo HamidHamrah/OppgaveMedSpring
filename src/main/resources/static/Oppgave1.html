@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <form id="container">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <input type="text" class="form-control" placeholder="Måned" id="month">
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="finn" >Finn Tempertatur</button>
+        <div id="output"></div>
+    </form>
+    <script>
+        $("#finn").click({
+            finnTemperut
+        });
+      function finnTemperut(){
+          let url="/?month="+$("#month").val();
+          $.get(url,function (temp){
+              $("#output").html(temp)
+          });
+
+      }
+    </script>
+</body>
+</html>
